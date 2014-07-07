@@ -1,6 +1,6 @@
 {
   "name": "node-stathat",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Stathat client for NodeJS that handles concurrency and auto-retry",
   "main": "main.js",
   "keywords": [
@@ -11,7 +11,7 @@
     "test": "./node_modules/mocha/bin/mocha test/*.js"
   },
   "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
-  "license": "BSD",
+  "license": "MIT",
   "devDependencies": {
     "sinon": "~1.10.2",
     "mocha": "~1.20.1"

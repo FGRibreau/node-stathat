@@ -1,3 +1,4 @@
+'use strict';
 // StatHat API node.js module
 var _       =require('lodash');
 var async   = require('async');
@@ -26,8 +27,9 @@ function StatHat(options){
 StatHat.prototype = {
   postRequest: function(path, params, f) {
     var options = _.defaults({
-      url: 'http' + (this.opts.useHTTPS ? 's':'') + '://api.stathat.com',
+      url: 'http' + (this.opts.useHTTPS ? 's':'') + '://api.stathat.com' + path,
       method: 'POST',
+      json:true,
       form: params
     }, this.opts.requestOptions);
 
@@ -64,6 +66,7 @@ StatHat.prototype = {
   length: function() {
     return this.postQueue.length();
   },
+
   trackValue: function(user_key, stat_key, value, f) {
     this.queueOrPostRequest('/v', {
       key: stat_key,
