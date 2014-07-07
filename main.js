@@ -4,11 +4,13 @@ var async   = require('async');
 var request = require('requestretry');
 
 var DEFAULT = {
-  // How many requests should we send at the same time
+  // How many requests should `node-stathat` we send at the same time
   concurrency: 4,
+
+  // Should node-stathat use https requests
   useHTTPS: false,
 
-  // Request option
+  // `request-retry` options
   request: {
     maxAttempts: 5,   // try 5 times
     retryDelay: 5000  // wait for 5s before trying again

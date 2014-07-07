@@ -4,18 +4,72 @@ Stathat client for NodeJS that handles concurrency and auto-retry
 
 [![npm](https://nodei.co/npm/node-stathat.png)](https://npmjs.org/package/node-stathat)
 
-### Installation
+### Usage
 
-This package can be installed via npm as follows
+```javascript
+var stathat = require('node-stathat'); // default config
+var stathat = require('node-stathat').setup({
+  // your own configuration
+});
 
-```shell
-npm install node-stathat
+stathat.trackEZCount('you@example.com', 'messages sent - female to male', 3, function(status, json) {
+    console.log("status: " + status);
+    console.log("json:   " + json);
+});
 ```
+
+### Configuration
+
+```javascript
+{
+  // How many requests should `node-stathat` we send at the same time
+  concurrency: 4,
+
+  // Should node-stathat use https requests
+  useHTTPS: false,
+
+  // `request-retry` options
+  request: {
+    maxAttempts: 5,   // try 5 times
+    retryDelay: 5000  // wait for 5s before trying again
+  }
+}
+```
+
+## Methods
+
+Extracted from the official [nodejs stathat readme](https://raw.githubusercontent.com/stathat/shlibs/master/node/README.md).
+
+### stathat.trackEZCount(email, stat_name, count, callback)
+
+Track a counter using the EZ API.  `stat_name` can be a new stat name and
+you can create new stats for your account in the middle of your code
+without having to create them on the stathat.com site.  The callback is
+called with the status of the call and the json response.
+
+### stathat.trackEZValue(email, stat_name, value, callback)
+
+Track a value using the EZ API.  `stat_name` can be a new stat name and
+you can create new stats for your account in the middle of your code
+without having to create them on the stathat.com site.  The callback is
+called with the status of the call and the json response.
+
+### stathat.trackCount(user_key, stat_key, count, callback)
+
+Track a counter using the classic API.  Get `user_key` and `stat_key`
+from the details page for a stat on [stathat.com](http://www.stathat.com).
+The callback is called with the the status of the call and the json response.
+
+### stathat.trackValue(user_key, stat_key, value, callback)
+
+Track a value using the classic API.  Get `user_key` and `stat_key`
+from the details page for a stat on [stathat.com](http://www.stathat.com).
+The callback is called with the the status of the call and the json response.
 
 
 ### Credits
 
-Inspired on [async-stathat](https://github.com/jmontrose/async-stathat/blob/master/main.js) and [stathat](https://github.com/stathat/shlibs/blob/master/node/main.js).
+Inspired from [async-stathat](https://github.com/jmontrose/async-stathat/blob/master/main.js) and [stathat](https://github.com/stathat/shlibs/blob/master/node/main.js).
 
 ### License
 
