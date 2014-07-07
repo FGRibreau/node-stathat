@@ -1,4 +1,4 @@
-node-stathat [![Build Status](https://drone.io/github.com/FGRibreau/node-stathat/status.png)](https://drone.io/github.com/FGRibreau/node-stathat/latest) [![Gittip](http://badgr.co/gittip/fgribreau.png)](https://www.gittip.com/fgribreau/) [![Deps](https://david-dm.org/FGRibreau/node-stathat.png)](https://david-dm.org/FGRibreau/node-stathat)
+# node-stathat [![Build Status](https://drone.io/github.com/FGRibreau/node-stathat/status.png)](https://drone.io/github.com/FGRibreau/node-stathat/latest) [![Gittip](http://badgr.co/gittip/fgribreau.png)](https://www.gittip.com/fgribreau/) [![Deps](https://david-dm.org/FGRibreau/node-stathat.png)](https://david-dm.org/FGRibreau/node-stathat)
 
 Stathat client for NodeJS that handles concurrency and auto-retry
 
