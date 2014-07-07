@@ -2,11 +2,23 @@
   "name": "node-stathat",
   "version": "0.0.0",
   "description": "Stathat client for NodeJS that handles concurrency and auto-retry",
-  "main": "index.js",
-  "keywords": ["monitoring", "stathat"],
+  "main": "main.js",
+  "keywords": [
+    "monitoring",
+    "stathat"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha test/*.js"
   },
   "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
-  "license": "BSD"
+  "license": "BSD",
+  "devDependencies": {
+    "sinon": "~1.10.2",
+    "mocha": "~1.20.1"
+  },
+  "dependencies": {
+    "async": "~0.9.0",
+    "requestretry": "~1.0.1",
+    "lodash": "~2.4.1"
+  }
 }
