@@ -1,0 +1,12 @@
+{
+  "name": "node-stathat",
+  "version": "0.0.0",
+  "description": "Stathat client for NodeJS that handles concurrency and auto-retry",
+  "main": "index.js",
+  "keywords": ["monitoring", "stathat"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
+  "license": "BSD"
+}
